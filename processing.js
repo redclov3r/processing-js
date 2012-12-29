@@ -4973,8 +4973,7 @@
       parse: function(textstring) {
         var xmlDoc;
         try {
-          var extension = textstring.substring(textstring.length-4);
-          if (extension === ".xml" || extension === ".svg") {
+          if (textstring.indexOf(".xml") > -1 || textstring.indexOf(".svg") > -1) {
             textstring = ajax(textstring);
           }
           xmlDoc = new DOMParser().parseFromString(textstring, "text/xml");
